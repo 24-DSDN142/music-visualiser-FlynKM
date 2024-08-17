@@ -1,21 +1,22 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
+let y = 100
+let x = 50
+let w = 20
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(20)
+  background(455)
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
 
-  fill(255)
-  let eyeSize = map(other,0,100,20,80)
-  let mouthSize = map(vocal,0,100,60,150)
-  ellipse(270,480,400,400)
-  rect(270,540,120,mouthSize)
-  ellipse(200,400,eyeSize)
-  ellipse(340,400,eyeSize)
   fill(0)
-  ellipse(340,400,10)
-  ellipse(200,400,10)
+  for(let i =1;i <=5; i++){
+
+    ellipse(x * i,y * i, w * i)
+
+  }
+    
+  
 
 
 
