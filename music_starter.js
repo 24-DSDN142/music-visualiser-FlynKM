@@ -38,18 +38,18 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   fill(246,192,6) // yellow
   ellipse(300,200,drumSize)
  
-  let starPoint = map(bass,30,70,90,10)
+  let starPoint = map(bass,20,40,30,20)
 
   fill(500,500,500)
-  beginShape()
-    vertex(510,190-starPoint)//top point
-    vertex(500,220)
-    vertex(480-starPoint,230)//west point
-    vertex(500,240)
-    vertex(510,270+starPoint)//south 
-    vertex(520,240)
-    vertex(540+starPoint,230)//west point
-    vertex(520,220)
+  beginShape() // star that pulses with bass
+    vertex(1010,220-starPoint)//top point
+    vertex(1000,240)
+    vertex(990-starPoint,250)//west point
+    vertex(1000,260)
+    vertex(1010,280+starPoint)//south point
+    vertex(1020,260)
+    vertex(1030+starPoint,250)//west point
+    vertex(1020,240)
    
   endShape(CLOSE)
 
@@ -63,17 +63,7 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   // fill(229,119,30); // darker orange
   // ellipse(width/2, ovalPlace, ovalSize);
 
-  if(words == "") {
-    last_words_opacity = last_words_opacity * 0.95;
-    words = last_words;
-  }
-  else {
-    last_words_opacity = (1 + last_words_opacity) * 1.1;
-    if(last_words_opacity > 255) {
-      last_words_opacity = 255;
-    }
-  }
-  last_words = words;
+
 
   textFont('Georgia');
   textAlign(CENTER);
