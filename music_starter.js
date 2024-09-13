@@ -24,14 +24,14 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   angleMode(DEGREES);
   background(8,8,13); // dark blue
  
-  image(stars,1536/2,432)
+  image(stars,1536/2,432) //inserting background stars
   imageMode(CENTER)
-  let Hue = map(vocal,0,100,10,255)
-  tint(Hue, 100,150)
-  image(img,768,432,1536,864);
+  let Hue = map(vocal,0,100,10,255) //mapping the vocals to red
+  tint(Hue, 100,150) //tint changes red balance based on vocal
+  image(img,768,432,1536,864); //nebula in bg
   noTint()
   
-   image(city,1536/2,864/2)
+   image(city,1536/2,864/2) //inserting city drawing
 
   push()
     let signs = map(other,40,100,0,255)
@@ -41,16 +41,11 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
    image(lights,1536/2,864/2)//glow around billboards/signs
 
 
-   pop()
-  let moon = map(drum, 70, 100, 30, 40);
+  pop()
+  
+   let moon = map(drum, 70, 100, 30, 40);
 
   fill(500,500,500)
-
-  // push()
-  // translate(768,432)
-  // rotate(moon)
-  // ellipse(-500,100,40)
-  // pop()
 
   ellipse(150,150,150)
   fill(8,8,13)
@@ -63,14 +58,14 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
 
   fill(500,500,500)
   beginShape() // star that pulses with bass
-    vertex(1010,220-starPoint)//top point
-    vertex(1000,240)
-    vertex(990-starPoint,250)//west point
-    vertex(1000,260)
-    vertex(1010,280+starPoint)//south point
-    vertex(1020,260)
-    vertex(1030+starPoint,250)//east point
-    vertex(1020,240)
+    vertex(910,220-starPoint)//top point
+    vertex(900,240)
+    vertex(890-starPoint,250)//west point
+    vertex(900,260)
+    vertex(910,280+starPoint)//south point
+    vertex(920,260)
+    vertex(930+starPoint,250)//east point
+    vertex(920,240)
    
   endShape(CLOSE)
 
