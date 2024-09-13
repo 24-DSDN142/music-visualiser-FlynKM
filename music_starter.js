@@ -8,6 +8,7 @@ let sunA
 let sunB
 let city
 let lights
+let stars
 
 function draw_one_frame(words, vocal, drum, bass, other,counter) {
   if(firstRun){
@@ -16,14 +17,14 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
     sunA = loadImage('sun front.png')
     sunB = loadImage('sun background.png')
     lights = loadImage('lights.png')
-
+    stars = loadImage('stars.png')
     firstRun = false
   }
 
   angleMode(DEGREES);
   background(8,8,13); // dark blue
  
-
+  image(stars,1536/2,432)
   imageMode(CENTER)
   let Hue = map(vocal,0,100,10,255)
   tint(Hue, 100,150)
@@ -99,6 +100,10 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
  
 endShape(CLOSE)
 
+  ellipse(100,100,5)
+  ellipse(500,500,5)
+  ellipse(700,300,5)
+  ellipse(450,600,5)
 
   
   
