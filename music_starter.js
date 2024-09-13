@@ -94,20 +94,11 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
  
 endShape(CLOSE)
 
-  ellipse(100,100,5)
+  ellipse(100,100,5) //backgriound stars
   ellipse(500,500,5)
   ellipse(700,300,5)
   ellipse(450,600,5)
 
-
-
-  textFont('Georgia');
-  textAlign(CENTER);
-  textStyle(BOLD);
-  textSize(80);
-  noStroke();
-  fill(0, 0, 0, int(last_words_opacity));
-  text(words, width/2, height/2);
 }
 
   
