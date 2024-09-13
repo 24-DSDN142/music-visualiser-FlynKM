@@ -2,43 +2,64 @@
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 let last_words = "";
 let last_words_opacity = 0;
+let firstRun = true
+let img
+let sunA
+let sunB
+let city
+let lights
 
 function draw_one_frame(words, vocal, drum, bass, other,counter) {
-  background(8,8,53); // dark blue
-  // fill(244,161,39); // orange
+  if(firstRun){
+   city = loadImage('city.png') 
+   img = loadImage('nebula.png')
+    sunA = loadImage('sun front.png')
+    sunB = loadImage('sun background.png')
+    lights = loadImage('lights.png')
 
-  // let stripeWidth = map(other, 50, 100, 40, 80, true);
+    firstRun = false
+  }
 
-  // let numStripes = height / stripeWidth;
-  // for(let i=0; i<numStripes; i=i+2) {
-  //   let cury = map(i, 0, numStripes-1, 0, height);
-  //   rect(0, cury, width, stripeWidth);
-  // }
-
-  // let triangleHeight = map(bass, 40, 100, 200, 550, true);
-  // fill(117,200,174); // teal
-  // for(let i=0; i<3; i++) {
-  //   let cur_x = map(i, 0, 4, 0, width);
-  //   let next_x = map(i+1, 0, 3, 0, width);
-  //   let mid_x = (cur_x + next_x) / 2.0;
-  //   //let cur_y = 4 * height / 5;
-  //   let cur_y = height 
-  //   triangle(cur_x, cur_y, mid_x, cur_y - triangleHeight, next_x, cur_y);
-  // }
-
-
-  let drumSize = map(drum, 30, 100, 200, 300, true);
-  // fill(90,61,43); // brown
-  // rect(0, 0, drumSize, drumSize);
-  // rect(width, 0, -drumSize, drumSize);
-  // rect(0, height, drumSize, -drumSize);
-  // rect(width, height, -drumSize, -drumSize);
-
-  strokeWeight(0)
-  fill(246,192,6) // yellow
-  ellipse(300,200,drumSize)
+  angleMode(DEGREES);
+  background(8,8,13); // dark blue
  
-  let starPoint = map(bass,20,40,30,20)
+
+  imageMode(CENTER)
+  let Hue = map(vocal,0,100,10,255)
+  tint(Hue, 100,150)
+  image(img,768,432,1536,864);
+  noTint()
+  
+   image(city,1536/2,864/2)
+
+  push()
+    let signs = map(other,40,100,0,255)
+    colorMode(HSB)
+    tint(255,0,signs)//brigtness changes w/other
+
+   image(lights,1536/2,864/2)//glow around billboards/signs
+
+
+   pop()
+  let drumSize = map(drum, 30, 100, 500, 600, true);
+
+  //image(sunB,300,200,200+drumSize,drumSize)
+ 
+  // push() //sun background roates w/ other
+  // let starBurst = map(other,0,100,0,140)
+  // translate(300,200)
+  // rotate(starBurst)
+  // image(sunA,0,0,550,380)
+  
+  // pop()
+  
+  
+
+  // strokeWeight(0)
+  // fill(246,192,6) // yellow
+  // ellipse(300,200,200)
+ 
+  let starPoint = map(bass,0,100,0,60)
 
   fill(500,500,500)
   beginShape() // star that pulses with bass
@@ -48,10 +69,35 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
     vertex(1000,260)
     vertex(1010,280+starPoint)//south point
     vertex(1020,260)
-    vertex(1030+starPoint,250)//west point
+    vertex(1030+starPoint,250)//east point
     vertex(1020,240)
    
   endShape(CLOSE)
+
+  fill(500,500,500)
+  beginShape() // star that pulses with bass
+    vertex(510,120-starPoint)//top point
+    vertex(500,140)
+    vertex(490-starPoint,150)//west point
+    vertex(500,160)
+    vertex(510,180+starPoint)//south point
+    vertex(520,160)
+    vertex(530+starPoint,150)//east point
+    vertex(520,140)
+   
+  endShape(CLOSE)
+
+  beginShape() // star that pulses with bass (slightly smaller)
+  vertex(210,325-starPoint)//top point
+  vertex(202,342)
+  vertex(195-starPoint,350)//west point
+  vertex(202,358)
+  vertex(210,375+starPoint)//south point
+  vertex(218,358)
+  vertex(225+starPoint,350)//east point
+  vertex(218,342)
+ 
+endShape(CLOSE)
 
 
   
