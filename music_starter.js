@@ -13,7 +13,7 @@ let stars
 function draw_one_frame(words, vocal, drum, bass, other,counter) {
   if(firstRun){
    city = loadImage('city.png') 
-   nebula = loadImage('the nebula.png')
+    nebula = loadImage('backlight.png')
     lights = loadImage('lights.png')
     stars = loadImage('stars.png')
     firstRun = false
