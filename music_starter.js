@@ -13,7 +13,7 @@ let stars
 function draw_one_frame(words, vocal, drum, bass, other,counter) {
   if(firstRun){
    city = loadImage('city.png') 
-   img = loadImage('the nebula.png')
+   nebula = loadImage('the nebula.png')
     lights = loadImage('lights.png')
     stars = loadImage('stars.png')
     firstRun = false
@@ -26,7 +26,7 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   imageMode(CENTER)
   let Hue = map(vocal,0,100,10,255) //mapping the vocals to red
   tint(Hue, 100,150) //tint changes red balance based on vocal
-  image(img,768,432,1536,864); //nebula in bg
+  image(nebula,768,432,1536,864); //nebula in bg
   noTint()
   
    image(city,1536/2,864/2) //inserting city drawing
