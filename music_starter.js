@@ -42,25 +42,24 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
 
 
    pop()
-  let drumSize = map(drum, 30, 100, 500, 600, true);
+  let moon = map(drum, 70, 100, 30, 40);
 
-  //image(sunB,300,200,200+drumSize,drumSize)
- 
-  // push() //sun background roates w/ other
-  // let starBurst = map(other,0,100,0,140)
-  // translate(300,200)
-  // rotate(starBurst)
-  // image(sunA,0,0,550,380)
-  
+  fill(500,500,500)
+
+  // push()
+  // translate(768,432)
+  // rotate(moon)
+  // ellipse(-500,100,40)
   // pop()
-  
-  
 
-  // strokeWeight(0)
-  // fill(246,192,6) // yellow
-  // ellipse(300,200,200)
- 
+  ellipse(150,150,150)
+  fill(8,8,13)
+
+  ellipse(160+moon,150,150)
+
   let starPoint = map(bass,0,100,0,60)
+
+  
 
   fill(500,500,500)
   beginShape() // star that pulses with bass
