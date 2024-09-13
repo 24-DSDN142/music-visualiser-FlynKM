@@ -21,7 +21,7 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
 
   angleMode(DEGREES);
   background(8,8,13); // dark blue
- 
+  noStroke()
   image(stars,1536/2,432) //inserting background stars
   imageMode(CENTER)
   let Hue = map(vocal,0,100,10,255) //mapping the vocals to red
